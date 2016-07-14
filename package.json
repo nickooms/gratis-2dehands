@@ -1,0 +1,24 @@
+{
+  "name": "gratis-2dehands",
+  "version": "1.0.0",
+  "description": "Gratis 2dehands",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Nick Ooms <oomsni@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickooms/gratis-2dehands.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.73.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.10.2",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
