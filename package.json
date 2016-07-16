@@ -15,7 +15,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "request": "^2.73.0"
+    "request": "^2.73.0",
+    "textract": "^2.0.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.10.2",
