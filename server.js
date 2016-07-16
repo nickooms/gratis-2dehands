@@ -26,6 +26,12 @@ const parseResponse = function(response) {
           case 'a':
             if (attrs.class === 'listed-adv-item-link') article.href = attrs.href;
             break;
+          case 'img':
+            if (attrs.itemprop === 'image') article.image = attrs.src;
+            break;
+          case 'p':
+            if (attrs.class === 'description' && attrs.itemprop === 'description') property = 'description';
+            break;
           default:
             break;
         }
@@ -34,6 +40,10 @@ const parseResponse = function(response) {
         switch(property) {
           case 'name':
             article.name = text;
+            property = null;
+            break;
+          case 'description':
+            article.description = text;
             property = null;
             break;
           default:
