@@ -20,7 +20,7 @@ const li = (x, indent) => {
   const I = i(indent);
   return `${I}<li style="height: 120px;">
 ${I}  <img src="${(x.image && x.image.replace(/^\/\//, 'http://') || '')}" style="margin: 0px 10px; width: 100px; height: 100px; float: left; clear:left;" />
-${I}  <h3>${x.name}</h3>
+${I}  <h2>${x.name}</h2>
 ${I}  <div>${x.description}</div>
 ${I}</li>`;
 };
