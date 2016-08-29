@@ -1,0 +1,11 @@
+img {
+	margin: 0px 5px;
+	width: 100px;
+	height: 100px;
+	float: left;
+	clear: left;
+}
+
+li {
+	height: 110px;
+}

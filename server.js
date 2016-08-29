@@ -18,8 +18,8 @@ ${I}</ul>`;
 
 const li = (x, indent) => {
   const I = i(indent);
-  return `${I}<li style="height: 120px;">
-${I}  <img src="${(x.image && x.image.replace(/^\/\//, 'http://') || '')}" style="margin: 0px 10px; width: 100px; height: 100px; float: left; clear:left;" />
+  return `${I}<li>
+${I}  <img src="${(x.image && x.image.replace(/^\/\//, 'http://') || '')}" />
 ${I}  <h2>${x.name}</h2>
 ${I}  <div>${x.description}</div>
 ${I}</li>`;
@@ -81,9 +81,17 @@ const parseResponse = function(response) {
   };
 
   const onend = () => {
-    const page = ul(articles.map(x => li(x, 1)).join('\n'), 0);
+    const page = `<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    ${ul(articles.map(x => li(x, 1)).join('\n'), 0)}
+  </body>
+</html>`;
     fs.writeFile('output.json', JSON.stringify(articles, null, 2));
-    fs.writeFile('output.html', page);
+    fs.writeFile('output.html', page, 'utf-8');
     console.log(`Found ${articles.length} items`);
   };
 
